@@ -1,3 +1,4 @@
+(function(){
 angular
 .module("tagMe", [
   "ui.router",
@@ -63,7 +64,7 @@ function IndexControllerFunction($state, Img ) {
 }
 
 function ShowControllerFunction($state, $stateParams, Img ) {
-  this.image = Img.get({id: $stateParams._id})
+  this.image = Img.get({id: $stateParams.id})
 
   this.update = function() {
     this.image.$update({id: $stateParams.id}).then(function(image) {
@@ -76,3 +77,6 @@ function ShowControllerFunction($state, $stateParams, Img ) {
     })
   }
 }
+
+
+})()

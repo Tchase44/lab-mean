@@ -1,8 +1,8 @@
 <h2>Super Awesome Images</h2>
 
 <div class="">
-  <div ng-repeat="image in vm.images">
-    <a ui-sref="show({id: image.id})"> <img src="{{image.url}}"> </a>
+  <div ng-repeat="pic in vm.images">
+    <a ui-sref="show({id : pic._id})"> <img src="{{pic.url}}"> </a>
   </div>
 
 </div>
