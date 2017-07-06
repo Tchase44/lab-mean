@@ -11,20 +11,31 @@ app.set("port", process.env.PORT || 4444)
 app.use(parser.json({extended:true}))
 app.use("/assets",express.static("public"))
 
-app.get("/api/",function(req,res){
-	Img
+app.get("/api/images",function(req,res){
+	Img.find({}).then(function(images){
+		res.json(images)
+	})
 })
-app.get("/api/",function(req,res){
-	Img
+app.get("/api/images/:id",function(req,res){
+	Img.findOne({_id: req.params.id}).then(function(image){
+		res.json(image)
+	})
 })
-app.post("/api/",function(req,res){
-	Img
+
+app.post("/api/images",function(req,res){
+	Img.create(req.body).then(function(image){
+		res.json(image)
+	})
 })
-app.delete("/api/",function(req,res){
-	Img
+app.delete("/api/images/:id",function(req,res){
+	Img.findOneAndRemove({_id: req.params.id}).then(function(){
+		res.json({succes: true})
+	})
 })
-app.put("/api/",function(req,res){
-	Img
+app.put("/api/images/:id",function(req,res){
+	Img.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}).then(function(image) {
+			res.json(image)
+		})
 })
 
 app.get("/*", function(req, res){
