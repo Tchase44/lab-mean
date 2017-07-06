@@ -11,25 +11,25 @@ app.set("port", process.env.PORT || 4444)
 app.use(parser.json({extended:true}))
 app.use("/assets",express.static("public"))
 
-app.get("/*", function(req, res){
-  res.sendFile(__dirname + "/public/app-root.html");
-});
-app.get("/",function(req,res){
+app.get("/api/",function(req,res){
 	Img
 })
-app.get("/",function(req,res){
+app.get("/api/",function(req,res){
 	Img
 })
-app.post("/",function(req,res){
+app.post("/api/",function(req,res){
 	Img
 })
-app.delete("/",function(req,res){
+app.delete("/api/",function(req,res){
 	Img
 })
-app.put("/",function(req,res){
+app.put("/api/",function(req,res){
 	Img
 })
 
+app.get("/*", function(req, res){
+  res.sendFile(__dirname + "/public/app-root.html");
+});
 
 
 app.listen(app.get("port"),function(){
