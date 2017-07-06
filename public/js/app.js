@@ -63,7 +63,7 @@ function IndexControllerFunction($state, Img ) {
 }
 
 function ShowControllerFunction($state, $stateParams, Img ) {
-  this.image = Img.get({id: $stateParams.id})
+  this.image = Img.get({id: $stateParams._id})
 
   this.update = function() {
     this.image.$update({id: $stateParams.id}).then(function(image) {
