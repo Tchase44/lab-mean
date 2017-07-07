@@ -22,6 +22,13 @@ app.get("/api/images/:id",function(req,res){
 	})
 })
 
+// TAG CREATE
+// app.post("/api/images/:id",function(req,res){
+// 	Img.tags.create(req.body).then(function(tag){
+// 		res.json(tag)
+// 	})
+// })
+
 app.post("/api/images",function(req,res){
 	Img.create(req.body).then(function(image){
 		res.json(image)
