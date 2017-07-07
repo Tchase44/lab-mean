@@ -1,45 +1,72 @@
-body {
-  text-align: center;
+
+*{box-sizing: border-box;}
+
+/* Wlecome page styles */
+main h1{
+	font-family: 'Monoton', cursive;
+	font-size: 400%;
+	text-align: center;
+	line-height: 100%;
+	margin-bottom: -40px;
+	text-shadow: 1px 1px 5px black;
+}
+main h1:first-child{
+	color: red;
+}
+main h1:nth-child(2){
+	color: rgb(66, 83, 244);
+}
+main h1:nth-child(3){
+	color: orange;
+}
+main h1:nth-child(4){
+	color: lawngreen;
 }
 
-#index-header {
-  font-size: 35px;
-  border-radius: 30px;
-  background-color: orange;
-  width: 30%;
-  line-height: 50px;
-  margin: 0 auto;
-  margin-bottom: 40px;
+#welA{
+	text-align: center;
+	text-decoration: none;
+	color:black;
+	animation-name: colorChange;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
 }
-
-.imagesIndex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 150px;
+#wel{
+	margin-top:80px;
 }
-
-
-.imagesIndex img {
-  width: 80%;
-  padding: 55px;
+@keyframes colorChange{
+	0%{color: red;}
+	25%{color: orange;}
+	50%{color: lawngreen;}
+	75%{color: blue;}
+	100%{color: purple;}
 }
-
-#add-photo {
-  width: 6%;
-  height: 31px;
-  font-size: 12px;
-  cursor: pointer;
+/** Show page styles **/
+span{
+	font-family: 'Zilla Slab', serif;
+	color:red;
+	margin-left: 20px;
 }
-#post-photo {
-  width: 12%;
-  height: 32px;
-  margin-top: 10px;
-  font-size: 12px;
-  cursor: pointer;
+span:hover{
+	cursor: pointer;
 }
-#photoUrl {
-  height: 26px;
-  font-size: 13px;
+.tagsOntags{
+	text-align: center;
+}
+.tagsOntags p {display: inline;}
+.showpage{
+	margin: 100px auto;
+	width:100%;
+}
+img.showImg{
+	width:60%;
+	margin: 10px 20% 0 20%;
+	box-shadow: 0px 0px 10px black;
+}
+.showpage form,button,input{
+	margin: 0 auto;
+	text-align: center;
+}
+.up2theDate{
+	text-align: center;
 }
