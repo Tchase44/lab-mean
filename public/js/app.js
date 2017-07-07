@@ -53,6 +53,7 @@ function ImgFactory ($resource) {
 }
 
 function IndexControllerFunction($state, Img ) {
+  this.hide = false;
   this.images = Img.query()
   this.newImage = new Img()
 
@@ -64,6 +65,9 @@ function IndexControllerFunction($state, Img ) {
 }
 
 function ShowControllerFunction($state, $stateParams, Img ) {
+  this.hide = false
+  this.hideDel = false
+  this.hideDelFun = false
   this.image = Img.get({id: $stateParams.id})
 
   this.update = function() {
