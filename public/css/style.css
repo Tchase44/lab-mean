@@ -1,3 +1,45 @@
-img {
-  width: 50%;
+body {
+  text-align: center;
+}
+
+#index-header {
+  font-size: 35px;
+  border-radius: 30px;
+  background-color: orange;
+  width: 30%;
+  line-height: 50px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.imagesIndex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 150px;
+}
+
+
+.imagesIndex img {
+  width: 80%;
+  padding: 55px;
+}
+
+#add-photo {
+  width: 6%;
+  height: 31px;
+  font-size: 12px;
+  cursor: pointer;
+}
+#post-photo {
+  width: 12%;
+  height: 32px;
+  margin-top: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+#photoUrl {
+  height: 26px;
+  font-size: 13px;
 }
