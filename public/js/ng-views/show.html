@@ -1,7 +1,7 @@
 <h1><a ui-sref="index">Super Awesome Images</a></h1>
 
 <div ng-if="!vm.image.url">
-	<h3>Hmmm... That image doesn't seem to exsist</h3>
+	<h3>Hmmm... That image doesn't seem to exist</h3>
 </div>
 
 <div ng-if="vm.image.url">
@@ -9,7 +9,6 @@
 	<button ng-click="vm.hideDel = !vm.hideDel">Delete Post?</button>
 	<button ng-show="vm.hideDel" ng-click="vm.hideDelFun = !vm.hideDelFun">Are You Sure?</button>
 	<button ng-show="vm.hideDelFun" ng-click="vm.destroy()">Click Here and its Gone</button>
-
 
 
 	<form ng-submit="vm.update()" ng-show="vm.hide">
@@ -20,9 +19,17 @@
 
 	<img src="{{vm.image.url}}" alt="should be an awesome image here">
 	<p ng-repeat="tag in vm.image.tags[0].hashtag">{{tag}}</p>
-	<form>
-		<input type="text" placeholder="tags comma seperated">
-		<button>Add Tags</button>
-	</form>
-	
+
+
+<!-- // TAG CREATE FORM -->
+  <form ng-submit="vm.create()">
+    <input type="text" ng-model="vm.image.newTag" placeholder="New Tag">
+  	<button type="submit">Post a tag!</button>
+  </form>
+
 </div>
+
+<!-- <form>
+<input type="text" placeholder="tags comma seperated">
+<button>Add Tags</button>
+</form> -->

@@ -70,6 +70,15 @@ function ShowControllerFunction($state, $stateParams, Img ) {
   this.hideDelFun = false
   this.image = Img.get({id: $stateParams.id})
 
+  // TAG CREATE
+  // this.image.newTag = new Tag()
+  // this.create = function() {
+  //   this.image.newTag.$save().then(function(tag){
+  //     $state.reload()
+  //   })
+  // }
+
+
   this.update = function() {
     this.image.$update({id: $stateParams.id}).then(function(image) {
       $state.go("index")
