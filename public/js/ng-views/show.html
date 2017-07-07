@@ -13,23 +13,19 @@
 
 	<form ng-submit="vm.update()" ng-show="vm.hide">
 		<input type="text" ng-model="vm.image.url" placeholder="New Photo URL Here" required>
-		<!-- <input type="text" ng-model="vm.image.tags[0].hashtag" placeholder='tags go here comma "," seperated'> -->
 		<button type="ng-submit">Update</button>
 	</form>
 
 	<img src="{{vm.image.url}}" alt="should be an awesome image here">
-	<p ng-repeat="tag in vm.image.tags[0].hashtag">{{tag}}</p>
 
 
-<!-- // TAG CREATE FORM -->
-  <form ng-submit="vm.create()">
-    <input type="text" ng-model="vm.image.newTag" placeholder="New Tag">
-  	<button type="submit">Post a tag!</button>
-  </form>
+	<div ng-repeat="tag in vm.image.tags[0].hashtag">
+		<p >{{tag}}<span ng-click="vm.deleteTag($index)">X</span></p>
+	</div>
+
+	<form ng-submit="vm.addTags()">
+		<input type="text" placeholder="tags comma seperated" ng-model="vm.tags">
+		<button type="submit">Add Tags</button>
+	</form>
 
 </div>
-
-<!-- <form>
-<input type="text" placeholder="tags comma seperated">
-<button>Add Tags</button>
-</form> -->

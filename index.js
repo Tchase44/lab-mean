@@ -34,6 +34,11 @@ app.post("/api/images",function(req,res){
 		res.json(image)
 	})
 })
+// app.post("/api/images/:id",function(req,res){
+// 	Img.findOne({_id: req.params.id}).then((image)=>{
+
+// 	})
+// })
 app.delete("/api/images/:id",function(req,res){
 	Img.findOneAndRemove({_id: req.params.id}).then(function(){
 		res.json({succes: true})
