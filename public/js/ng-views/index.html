@@ -1,15 +1,15 @@
-<h2 id="index-header">Super Awesome Images</h2>
+<h2 id="index-header" >Super Awesome Images</h2>
 
 
-<button id="add-photo" ng-click="vm.hide = !vm.hide">Add a Photo</button>
-<form ng-submit="vm.create()" ng-show="vm.hide">
-	<input id="photoUrl" type="" ng-model="vm.newImage.url" placeholder="Photo URL" required>
+<form ng-submit="vm.create()" id="idxForm" >
+	<button id="add-photo" class="idxBtn" ng-click="vm.hide = !vm.hide">Add a Photo</button>
+	<input id="photoUrl" class="idxBtn" ng-show="vm.hide" ng-model="vm.newImage.url" placeholder="Photo URL" required><br>
 	<!-- <input type="" ng-model="vm.newImage.tags" placeholder="Tags comma seperated'blue , green'"> -->
-	<button id="post-photo" type="submit">Post the new Awesome Photo!</button>
+	<button id="post-photo" class="idxBtn" ng-show="vm.hide" type="submit">Post the new Awesome Photo!</button>
 </form>
 <div class="imagesIndex">
-  <div ng-repeat="pic in vm.images | orderBy : '_id' : true">
-    <a ui-sref="show({id : pic._id})"> <img src="{{pic.url}}"> </a>
+  <div class="repeater" ng-repeat="pic in vm.images | orderBy : '_id' : true">
+    <a ui-sref="show({id : pic._id})"> <img class="idxImg" src="{{pic.url}}"> </a>
   </div>
 
 
