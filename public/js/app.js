@@ -58,6 +58,7 @@ function IndexControllerFunction($state, Img ) {
   this.newImage = new Img()
 
   this.create = function() {
+    this.newImage.tags = {hashtag: []}
     this.newImage.$save().then (function(image) {
       $state.reload()
     })
@@ -69,15 +70,27 @@ function ShowControllerFunction($state, $stateParams, Img ) {
   this.hideDel = false
   this.hideDelFun = false
   this.image = Img.get({id: $stateParams.id})
-
+  // this.tags = ''
   this.update = function() {
     this.image.$update({id: $stateParams.id}).then(function(image) {
       $state.go("index")
     })
   }
+  this.addTags = function(){
+    this.image.tags[0].hashtag.push(this.tags)
+    this.image.$update({id: $stateParams.id}).then((image)=>{
+      $state.reload()
+    })
+  }
   this.destroy = function(){
     this.image.$delete({id: $stateParams.id}).then(function() {
       $state.go("index")
+    })
+  }
+  this.deleteTag = function(idx){
+    this.image.tags[0].hashtag.splice(idx,1)
+    this.image.$update({id: $stateParams.id}).then(()=>{
+      $state.reload()
     })
   }
 }
